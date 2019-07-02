@@ -7,6 +7,7 @@ body{
     display: flex; 
     flex-direction: column; 
     min-height: 100vh; 
+    
 }
 header{
     margin-top: 16px; 
@@ -29,9 +30,11 @@ header a {
     font-family: 'Barriecito', cursive;
 }
 .main-content{
+    cursor: url('cloud.png'), auto;
     flex-grow: 1; 
 }
 .main-content p{
+    
     letter-spacing: 10px; 
 }
 #intro{
@@ -58,7 +61,7 @@ input{
     font-size: 16px; 
 }
 button{
-    cursor: pointer; 
+    cursor: url('cloud.png'), auto;
     border: 3px solid palegreen; 
     background: palegreen; 
     color: white; 
