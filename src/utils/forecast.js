@@ -8,7 +8,17 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error){
             callback("unable to find location", undefined)
         } else{
-            callback(undefined, body.daily.data[0].summary + ' it is currently ' + body.currently.temperature + " degrees out. And there is a " + body.currently.precipProbability + " chance of rain.")
+            
+            callback(undefined, {
+                currentTemp: body.currently.temperature, 
+                tempHigh: body.daily.data[0].temperatureHigh, 
+                tempLow: body.daily.data[0].temperatureLow, 
+                rain: body.currently.precipProbability,
+                summary: body.daily.data[0].summary, 
+                uv: body.daily.data[0].uvIndex, 
+                ozone: body.daily.data[0].ozone
+            })
+                //'It is currently ' + body.currently.temperature + " degrees out. With an expected high/low of " + body.daily.data[0].temperatureHigh + "/" + body.daily.data[0].temperatureLow +  " and a " + body.currently.precipProbability + " chance of rain. " + body.daily.data[0].summary + "\n" +  "This is a warning to slather on your sunscreen because the uv index is " + body.daily.data[0].uvIndex + " and the ozone is " + body.daily.data[0].ozone)
         }
     })
 }          

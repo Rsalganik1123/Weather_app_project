@@ -62,6 +62,13 @@ app.get('/weather', (req,res) => {
             }
             res.send({
                 forecast: forecastData, 
+                currentTemp: forecastData.currentTemp, 
+                tempHigh: forecastData.temperatureHigh, 
+                tempLow: forecastData.temperatureLow, 
+                rain: forecastData.precipProbability,
+                summary: forecastData.summary, 
+                uv: forecastData.uvIndex, 
+                ozone: forecastData.ozone,
                 location, 
                 address
                 })
