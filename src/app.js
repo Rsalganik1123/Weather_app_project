@@ -24,13 +24,13 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req,res) => {
     res.render('index', {
         title: 'Weather', 
-        name: "Becca"
+        name: "Rebecca Salganik"
     })
 })
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'About',
-        name: "Becca",
+        name: "Rebecca Salganik",
         profession: "coder", 
         level: "novice af"
     })
@@ -38,7 +38,7 @@ app.get('/about', (req,res) => {
 app.get('/help', (req,res) => {
     res.render('help', {
         title:"Help", 
-        name: "Becca",
+        name: "Rebecca Salganik",
         request: 'help', 
          
         profession: "coder", 
@@ -86,14 +86,14 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req,res) => {
     res.render('404', {
         title: 'Help',
-        name: "Becca", 
+        name: "Rebecca Salganik", 
         errorMsg: 'I cannot actually help you' 
     })
 })
 app.get('*', (req,res) => {
     res.render('404', {
         title: 'Help',
-        name: "Becca", 
+        name: "Rebecca Salganik", 
         errorMsg:"Something went wrong..."
     })
 })
